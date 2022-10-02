@@ -1,0 +1,1 @@
+## Snap metadata for blackcoin more

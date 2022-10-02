@@ -1,0 +1,55 @@
+name: blackcoin
+version: v2.13.2.9
+summary:   proof of stake decentralized digital currency
+description: |
+  Blackcoin is a decentralised digital currency with near-instant transaction
+  speeds and negligible transaction fees built upon Proof of Stake 3.0 (PoSV3, BPoS)
+  as introduced by the Blackcoin development team.
+
+  Blackcoin More is the name of open source software which enables the use of this currency.
+  It takes Blackcoin to the next level by building upon Bitcoin Core 0.13.2 with some patches
+  from newer Bitcoin Core versions to offer performance enhancements, wider compatibility
+  with third party services and a more advanced base.
+
+  For more information, as well as an immediately useable, binary version of the Blackcoin More
+  software, see https://blackcoinmore.org
+
+  For more information about Blackcoin itself, see https://blackcoin.org
+
+grade: stable
+confinement: strict
+
+apps:
+  daemon:
+    command: blackmored
+    plugs: [home, removable-media, network, network-bind]
+    environment:
+      HOME: $SNAP_USER_COMMON
+  qt:
+    command: desktop-launch blackmore-qt
+    plugs: [home, removable-media, network, network-bind, desktop, x11, unity7]
+    environment:
+      HOME: $SNAP_USER_COMMON
+      DISABLE_WAYLAND: 1
+  cli:
+    command: blackmore-cli
+    plugs: [home, removable-media, network]
+    environment:
+      HOME: $SNAP_USER_COMMON
+
+parts:
+  bitcoin-core:
+    plugin: nil
+    override-build: |
+      env | grep SNAP
+      wget https://github.com/CoinBlack/blackcoin-more/releases/download/${SNAPCRAFT_PROJECT_VERSION}/blackcoin-more-${SNAPCRAFT_PROJECT_VERSION}-${SNAPCRAFT_ARCH_TRIPLET}.tar.gz
+      tar -xvf blackcoin-more-${SNAPCRAFT_PROJECT_VERSION}-${SNAPCRAFT_ARCH_TRIPLET}.tar.gz
+      install -m 0755 -D -t $SNAPCRAFT_PART_INSTALL/bin blackcoin-more-${SNAPCRAFT_PROJECT_VERSION}/bin/blackmored
+      install -m 0755 -D -t $SNAPCRAFT_PART_INSTALL/bin blackcoin-more-${SNAPCRAFT_PROJECT_VERSION}/bin/blackmore-qt
+      install -m 0755 -D -t $SNAPCRAFT_PART_INSTALL/bin blackcoin-more-${SNAPCRAFT_PROJECT_VERSION}/bin/blackmore-cli
+      wget https://raw.githubusercontent.com/CoinBlack/blackcoin-more/${SNAPCRAFT_PROJECT_VERSION}/share/pixmaps/bitcoin128.png
+      install -m 0644 -D -t $SNAPCRAFT_PART_INSTALL/share/pixmaps bitcoin128.png
+    build-packages:
+      - wget
+    after:
+      - desktop-qt5
