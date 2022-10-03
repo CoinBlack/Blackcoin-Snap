@@ -20,7 +20,7 @@ contact: team@blackcoin.org
 donation: BBXBrYnrhbDyo44eRxeUPVjqPpNk9bBg8b
 issues: https://github.com/CoinBlack/blackcoin-more-snap/issues
 source-code: https://github.com/CoinBlack/blackcoin-more-snap.git
-icon: https://github.com/CoinBlack/blackcoinmore.org/raw/feature/migrate_to_bootstrap/assets/img/logo-blk.png
+icon: snap/gui/logo.png
 license: MIT
 architectures:
   - amd64
