@@ -17,15 +17,18 @@ description: |
 
   For more information about Blackcoin itself, see https://blackcoin.org
 contact: team@blackcoin.org
-donation: BBXBrYnrhbDyo44eRxeUPVjqPpNk9bBg8b
+donation: 'blackcoin:BBXBrYnrhbDyo44eRxeUPVjqPpNk9bBg8b'
 issues: https://github.com/CoinBlack/blackcoin-more-snap/issues
 source-code: https://github.com/CoinBlack/blackcoin-more-snap.git
 icon: snap/gui/logo.png
 license: MIT
 architectures:
-  - amd64
-  - arm64
-  - armhf
+  - build-on: amd64
+    build-for: amd64
+  - build-on: arm64
+    build-for: arm64
+  - build-on: arm64
+    build-for: armhf
 
 grade: stable
 confinement: strict
