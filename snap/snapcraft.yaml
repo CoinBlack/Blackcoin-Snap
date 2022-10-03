@@ -22,9 +22,8 @@ source-code: https://github.com/CoinBlack/blackcoin-more-snap.git
 icon: snap/gui/logo.png
 license: MIT
 architectures:
-  - build-for: amd64
-  - build-for: arm64
-  - build-for: armhf
+  - build-on: amd64
+  - run-on: [amd64, arm64, armhf]
 
 grade: stable
 confinement: strict
