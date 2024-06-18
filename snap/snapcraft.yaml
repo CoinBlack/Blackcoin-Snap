@@ -69,7 +69,7 @@ parts:
     source: https://github.com/ubuntu/snapcraft-desktop-helpers.git
     source-depth: 1
     source-subdir: qt
-    source-commit: ec861254c2a1d2447b2c589446e6cdf04c75c260
+    source-commit: e654ad79a039afdf5f2913ab0e1ce2d43b7ca745
     plugin: make
     make-parameters: ["FLAVOR=qt5"]
     build-packages:
@@ -87,7 +87,7 @@ parts:
       - libqt5gui5
       - libgdk-pixbuf2.0-0
       - libqt5svg5 # for loading icon themes which are svg
-      - try: [appmenu-qt5] # not available on core18
+      - appmenu-qt5 # not available on core18
       - locales-all
       - xdg-user-dirs
       - fcitx-frontend-qt5
