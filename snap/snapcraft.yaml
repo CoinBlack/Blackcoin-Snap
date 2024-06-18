@@ -1,6 +1,6 @@
 name: blackcoin-more
 title: 'Blackcoin More QT Wallet'
-version: 'v13.2.2'
+version: '13.2.3'
 summary: proof of stake decentralized digital currency
 description: |
   Blackcoin is a decentralised digital currency with near-instant transaction
@@ -89,12 +89,12 @@ parts:
     plugin: nil
     override-build: | 
       env | grep SNAP
-      wget https://github.com/CoinBlack/blackcoin-more/releases/download/${SNAPCRAFT_PROJECT_VERSION}/blackcoin-more-${SNAPCRAFT_ARCH_TRIPLET}-${SNAPCRAFT_PROJECT_VERSION}.tar.gz
-      tar -xvf blackcoin-more-${SNAPCRAFT_ARCH_TRIPLET}-${SNAPCRAFT_PROJECT_VERSION}.tar.gz
-      install -m 0755 -D -t $SNAPCRAFT_PART_INSTALL/bin blackmored
-      install -m 0755 -D -t $SNAPCRAFT_PART_INSTALL/bin blackmore-qt
-      install -m 0755 -D -t $SNAPCRAFT_PART_INSTALL/bin blackmore-cli
-      install -m 0755 -D -t $SNAPCRAFT_PART_INSTALL/bin blackmore-tx
+      wget https://github.com/CoinBlack/blackcoin-more/releases/download/${SNAPCRAFT_PROJECT_VERSION}/blackcoin-more-${SNAPCRAFT_PROJECT_VERSION}-${SNAPCRAFT_ARCH_TRIPLET}.tar.gz
+      tar -xvf blackcoin-more-${SNAPCRAFT_PROJECT_VERSION}-${SNAPCRAFT_ARCH_TRIPLET}.tar.gz
+      install -m 0755 -D -t $SNAPCRAFT_PART_INSTALL/bin blackcoin-more-${SNAPCRAFT_PROJECT_VERSION}/bin/blackmored
+      install -m 0755 -D -t $SNAPCRAFT_PART_INSTALL/bin blackcoin-more-${SNAPCRAFT_PROJECT_VERSION}/bin/blackmore-qt
+      install -m 0755 -D -t $SNAPCRAFT_PART_INSTALL/bin blackcoin-more-${SNAPCRAFT_PROJECT_VERSION}/bin/blackmore-cli
+      install -m 0755 -D -t $SNAPCRAFT_PART_INSTALL/bin blackcoin-more-${SNAPCRAFT_PROJECT_VERSION}/bin/blackmore-tx
       wget https://raw.githubusercontent.com/CoinBlack/blackcoin-more/master/share/pixmaps/bitcoin128.png
       install -m 0644 -D -t $SNAPCRAFT_PART_INSTALL/share/pixmaps bitcoin128.png
     build-packages:
