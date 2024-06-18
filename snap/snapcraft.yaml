@@ -89,7 +89,7 @@ parts:
     plugin: nil
     override-build: | 
       env | grep SNAP
-      wget https://github.com/CoinBlack/blackcoin-more/releases/download/${SNAPCRAFT_PROJECT_VERSION}/blackcoin-more-${SNAPCRAFT_PROJECT_VERSION}-${SNAPCRAFT_ARCH_TRIPLET}.tar.gz
+      wget https://github.com/CoinBlack/blackcoin-more/releases/download/v${SNAPCRAFT_PROJECT_VERSION}/blackcoin-more-${SNAPCRAFT_PROJECT_VERSION}-${SNAPCRAFT_ARCH_TRIPLET}.tar.gz
       tar -xvf blackcoin-more-${SNAPCRAFT_PROJECT_VERSION}-${SNAPCRAFT_ARCH_TRIPLET}.tar.gz
       install -m 0755 -D -t $SNAPCRAFT_PART_INSTALL/bin blackcoin-more-${SNAPCRAFT_PROJECT_VERSION}/bin/blackmored
       install -m 0755 -D -t $SNAPCRAFT_PART_INSTALL/bin blackcoin-more-${SNAPCRAFT_PROJECT_VERSION}/bin/blackmore-qt
