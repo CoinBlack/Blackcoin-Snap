@@ -24,7 +24,7 @@ license: MIT
 
 grade: stable
 confinement: strict
-base: core18
+base: core20
 compression: lzo
 architectures:
   - build-on: amd64
@@ -36,7 +36,7 @@ architectures:
 
 apps:
   daemon:
-    command: blackmored
+    command: bin/blackmored
     plugs: [home, removable-media, network, network-bind]
     environment:
       # Override HOME so the datadir is located at
@@ -46,18 +46,18 @@ apps:
       # https://docs.snapcraft.io/environment-variables/7983
       HOME: $SNAP_USER_COMMON
   qt:
-    command: desktop-launch blackmore-qt
+    command: bin/desktop-launch bin/blackmore-qt
     plugs: [home, removable-media, network, network-bind, desktop, x11, unity7]
     environment:
       HOME: $SNAP_USER_COMMON
       DISABLE_WAYLAND: 1
   cli:
-    command: blackmore-cli
+    command: bin/blackmore-cli
     plugs: [home, removable-media, network]
     environment:
       HOME: $SNAP_USER_COMMON
   tx:
-    command: blackmore-tx
+    command: bin/blackmore-tx
     environment:
       HOME: $SNAP_USER_COMMON
 
@@ -77,7 +77,6 @@ parts:
       - qtbase5-dev
       - dpkg-dev
     stage-packages:
-      - libgtk2.0-0
       - libxkbcommon0
       - ttf-ubuntu-font-family
       - dmz-cursor-theme
