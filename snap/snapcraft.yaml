@@ -91,7 +91,6 @@ parts:
       - xdg-user-dirs
       - fcitx-frontend-qt5
       - libgtk2.0-0
-      - libgdk-pixbuf-2.0-0
 
   blackcoin-more:
     plugin: nil
