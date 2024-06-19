@@ -46,7 +46,7 @@ apps:
       # https://docs.snapcraft.io/environment-variables/7983
       HOME: $SNAP_USER_COMMON
   qt:
-    command: desktop-launch $SNAP/bin/blackmore-qt
+    command: bin/desktop-launch $SNAP/bin/blackmore-qt
     plugs: [home, removable-media, network, network-bind, desktop, x11, unity7]
     environment:
       HOME: $SNAP_USER_COMMON
@@ -90,6 +90,8 @@ parts:
       - locales-all
       - xdg-user-dirs
       - fcitx-frontend-qt5
+      - libgtk2.0-0
+      - libgdk-pixbuf-2.0-0
 
   blackcoin-more:
     plugin: nil
