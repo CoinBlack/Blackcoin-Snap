@@ -3,16 +3,16 @@ title: 'Blackcoin More QT Wallet'
 version: '13.2.3'
 summary: proof of stake decentralized digital currency
 description: |
-  Blackcoin is a decentralised digital currency with near-instant transaction
+  Blackcoin is a decentralized digital currency with near-instant transaction
   speeds and negligible transaction fees built upon Proof of Stake 3.0 (PoSV3, BPoS)
   as introduced by the Blackcoin development team.
 
   Blackcoin More is the name of open source software which enables the use of this currency.
   It takes Blackcoin to the next level by building upon Bitcoin Core 0.13.2 with some patches
   from newer Bitcoin Core versions to offer performance enhancements, wider compatibility
-  with third party services and a more advanced base.
+  with third-party services, and a more advanced base.
 
-  For more information, as well as an immediately useable, binary version of the Blackcoin More
+  For more information, as well as an immediately usable, binary version of the Blackcoin More
   software, see https://blackcoinmore.org
 
   For more information about Blackcoin itself, see https://blackcoin.org
